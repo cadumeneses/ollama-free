@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ollama Node API — Swagger</title>
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css">
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <noscript>Ative JavaScript para usar o Swagger. O contrato está em /openapi.json.</noscript>
+  <script src="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui-bundle.js"></script>
+  <script>
+    if (typeof SwaggerUIBundle === 'undefined') {
+      document.getElementById('swagger-ui').textContent = 'Não foi possível carregar o Swagger pela CDN. Verifique sua conexão. O contrato está em /openapi.json.';
+    } else {
+      window.ui = SwaggerUIBundle({
+        url: '/openapi.json',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        persistAuthorization: false,
+        validatorUrl: null,
+        displayRequestDuration: true,
+        supportedSubmitMethods: ['get', 'post'],
+        presets: [SwaggerUIBundle.presets.apis],
+        layout: 'BaseLayout'
+      });
+    }
+  </script>
+</body>
+</html>

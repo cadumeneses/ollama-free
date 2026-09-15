@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ollama-node-simple
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: API_KEY
+        generateValue: true
